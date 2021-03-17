@@ -1,3 +1,13 @@
 .home-page {
   width: 100vw;
+  display: flex;
+  .home-left {
+    width: 300px;
+  }
+  .home-right {
+    width: 500px;
+  }
+  .home-center {
+    flex: 1;
+  }
 }

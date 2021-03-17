@@ -22,13 +22,15 @@
     "plugins": [{ "name": "typescript-plugin-css-modules"}],
     "baseUrl": ".",
     "paths": {
-      "@src": ["src/*"],
-      "@assets": ["src/assets/*"],
-      "@components": ["src/components/*"],
-      "@pages": ["src/pages/*"],
-      "@reducers": ["src/reducers/*"],
-      "@styles": ["src/styles/*"],
-      "@utils": ["src/utils/*"]
+      "@src/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@models/*": ["src/models/*"],
+      "@styles/*": ["src/styles/*"],
+      "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@routes/*": ["src/routes/*"]
     }
   },
   "include": [

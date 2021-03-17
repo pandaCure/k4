@@ -9,13 +9,14 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/dva": "^1.1.0",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
-    "antd": "^4.13.1",
+    "antd": "^4.2.5-alpha.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
@@ -27,6 +28,7 @@
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "dva": "^2.6.0-beta.22",
     "eslint": "^7.22.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
@@ -60,9 +62,11 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dnd": "^14.0.1",
+    "react-dnd-html5-backend": "^14.0.0",
     "react-dom": "^17.0.1",
     "react-draggable": "^4.4.3",
     "react-grid-layout": "^1.2.2",
+    "react-redux": "^7.2.2",
     "react-refresh": "^0.8.3",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
@@ -86,7 +90,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "pages": "./node_modules/.bin/ts-node -O '{\"module\":\"commonjs\"}' bin/pages.ts -n asdasd"
+    "pages": "./node_modules/.bin/ts-node -O '{\\\"module\\\":\\\"commonjs\\\"}' bin/pages/pages.ts",
+    "pages:build": "tsc bin/**/*.ts --module commonjs --target esnext --esModuleInterop --outdir bin/dist"
   },
   "eslintConfig": {
     "extends": [
@@ -164,11 +169,16 @@
     ]
   },
   "devDependencies": {
+    "@types/react-redux": "^7.1.16",
     "@types/redux-logger": "^3.0.8",
+    "@types/webpack-env": "^1.16.0",
     "commander": "^7.1.0",
     "eslint-config-alloy": "^3.10.0",
     "prettier": "^2.2.1",
     "ts-node": "^9.1.1",
     "typescript-plugin-css-modules": "^3.2.0"
+  },
+  "bin": {
+    "pages": "./bin/dist/pages.js"
   }
 }

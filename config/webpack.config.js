@@ -1,4 +1,4 @@
-'use strict';
+
 
 const fs = require('fs');
 const path = require('path');
@@ -332,9 +332,11 @@ module.exports = function (webpackEnv) {
         "@assets": path.resolve(paths.appSrc, 'assets'),
         "@components": path.resolve(paths.appSrc, 'components'),
         "@pages": path.resolve(paths.appSrc, 'pages'),
-        "@reducers": path.resolve(paths.appSrc, 'reducers'),
+        "@models": path.resolve(paths.appSrc, 'models'),
         "@styles": path.resolve(paths.appSrc, 'styles'),
         "@utils": path.resolve(paths.appSrc, 'utils'),
+        "@hooks": path.resolve(paths.appSrc, 'hooks'),
+        "@routes": path.resolve(paths.appSrc, 'routes'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
@@ -566,13 +568,11 @@ module.exports = function (webpackEnv) {
     plugins: [
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
-        Object.assign(
-          {},
-          {
-            inject: true,
+        {
+          
+          inject: true,
             template: paths.appHtml,
-          },
-          isEnvProduction
+          ...(isEnvProduction
             ? {
                 minify: {
                   removeComments: true,
@@ -587,8 +587,8 @@ module.exports = function (webpackEnv) {
                   minifyURLs: true,
                 },
               }
-            : undefined
-        )
+            : undefined)
+        }
       ),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
