@@ -12,10 +12,12 @@ interface IFormItem {
     [key: string]: any
   }
   ItemConfig: FormItemProps
+  id: string
 }
 
 export interface IHomeStateType {
   form: IFormItem[]
+  currentOptId: string
 }
 
 export interface IPageCompose {
@@ -26,6 +28,7 @@ export interface IPageCompose {
   }
   reducers: {
     updateFormItem: Reducer<IHomeStateType>
+    updateCurrentOptId: Reducer<IHomeStateType>
   }
   subscriptions: SubscriptionsMapObject
 }
@@ -34,7 +37,8 @@ const pageCompose: IPageCompose = {
   namespace: 'home',
 
   state: {
-    form: []
+    form: [],
+    currentOptId: ''
   },
 
   effects: {
@@ -53,8 +57,11 @@ const pageCompose: IPageCompose = {
   },
 
   reducers: {
-    updateFormItem(state, { form }) {
+    updateFormItem(state = { ...pageCompose.state }, { form }) {
       return { ...state, form }
+    },
+    updateCurrentOptId(state = { ...pageCompose.state }, { currentOptId }) {
+      return { ...state, currentOptId }
     }
   }
 }

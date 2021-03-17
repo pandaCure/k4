@@ -29,6 +29,13 @@ const Right = (props: Readonly<Props>) => {
       autoValidate: true
     })
   }, [])
+  // TODO: 默认值类型
+  /**
+   * 0、i 分为默认值区 ii 常规区
+   * 1、当前选中的类型，调用对应的Hook，将返回值存到redux，经过center渲染出来
+   * 2、怎么写文件
+   */
+
   const form = useMemo(() => {
     return [
       {

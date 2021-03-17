@@ -1946,6 +1946,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-grid-layout@^1.1.1":
+  version "1.1.1"
+  resolved "https://npm.corp.kuaishou.com/@types%2freact-grid-layout/-/react-grid-layout-1.1.1.tgz#1eb322fa88cd1475bdc60ecca9676f6853e18887"
+  integrity sha1-HrMi+ojNFHW9xg7MqWdvaFPhiIc=
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-redux@^7.1.0", "@types/react-redux@^7.1.16":
   version "7.1.16"
   resolved "https://npm.corp.kuaishou.com/@types%2freact-redux/-/react-redux-7.1.16.tgz#0fbd04c2500c12105494c83d4a3e45c084e3cb21"
@@ -10296,10 +10303,10 @@ react-fast-compare@^2.0.4:
   resolved "https://npm.corp.kuaishou.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha1-6EtNRVsP7BE+BALDKTUnFRlvgfk=
 
-react-grid-layout@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-grid-layout/-/react-grid-layout-1.2.2.tgz#42cdb4b27fcdc4fad1655d8862b9d54c6f011d6d"
-  integrity sha512-i5/xPkyi0llA6PCEW2B26e7pTY+JLp0zPvs6MYbbEXWaO1FWG0xr6Q/FqPrh6K86glV5ZRU7DEbvnedZVdFglg==
+react-grid-layout@^1.2.3:
+  version "1.2.3"
+  resolved "https://npm.corp.kuaishou.com/react-grid-layout/-/react-grid-layout-1.2.3.tgz#4def2b5e1b03fbed52b4cdafeb984a3494c9976c"
+  integrity sha1-Te8rXhsD++1StM2v65hKNJTJl2w=
   dependencies:
     classnames "2.x"
     lodash.isequal "^4.0.0"
