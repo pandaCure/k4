@@ -25,7 +25,7 @@ const Left = (props: Readonly<Props>) => {
           Cp: Input,
           name: randomName,
           label: randomName,
-          id: Math.random()
+          id: String(Math.random())
         }
       }
     })

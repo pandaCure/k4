@@ -9,6 +9,8 @@ import zhCN from 'antd/lib/locale/zh_CN'
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 import 'antd/dist/antd.css'
+import 'noform-json/dist/index.css'
+import 'nowrapper-json/dist/antd/index.css'
 
 export interface IRoot {
   app: DvaInstance

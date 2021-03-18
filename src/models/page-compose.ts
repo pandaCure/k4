@@ -18,6 +18,7 @@ interface IFormItem {
 export interface IHomeStateType {
   form: IFormItem[]
   currentOptId: string
+  drawerStatus: boolean
 }
 
 export interface IPageCompose {
@@ -25,6 +26,7 @@ export interface IPageCompose {
   state: IHomeStateType
   effects: {
     createFormItem: Effect
+    handleEditEventEffect: Effect
   }
   reducers: {
     updateFormItem: Reducer<IHomeStateType>
@@ -38,13 +40,28 @@ const pageCompose: IPageCompose = {
 
   state: {
     form: [],
-    currentOptId: ''
+    currentOptId: '',
+    drawerStatus: false
   },
 
   effects: {
     *createFormItem(action, { put, select }) {
       const form = yield select((state: reducerState) => state.home.form)
       form.push(action.payload.props)
+      yield put({
+        type: 'updateFormItem',
+        form: [...form]
+      })
+    },
+    *handleEditEventEffect(action, { put, select }) {
+      const form: IFormItem[] = yield select((state: reducerState) => state.home.form)
+      const id = action.id
+      let index = form.findIndex((f) => f.id === id)
+      const item = {
+        ...form[index],
+        ...action
+      }
+      form.splice(index, 1, item)
       yield put({
         type: 'updateFormItem',
         form: [...form]
@@ -60,8 +77,12 @@ const pageCompose: IPageCompose = {
     updateFormItem(state = { ...pageCompose.state }, { form }) {
       return { ...state, form }
     },
-    updateCurrentOptId(state = { ...pageCompose.state }, { currentOptId }) {
-      return { ...state, currentOptId }
+    updateCurrentOptId(state = { ...pageCompose.state }, { currentOptId, drawerStatus }) {
+      return {
+        ...state,
+        currentOptId: currentOptId ?? state.currentOptId,
+        drawerStatus: drawerStatus ?? state.drawerStatus
+      }
     }
   }
 }
