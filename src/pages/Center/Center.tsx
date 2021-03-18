@@ -23,11 +23,12 @@ const Center = (props: Readonly<Props>) => {
     form.forEach((v) => v?.CpConfig?.defaultValue && core.setValue(v.name, v.CpConfig.defaultValue))
   }, [form, core])
   const handleEditFormItem = (e: React.MouseEvent<HTMLDivElement>) => {
-    console.log(e.currentTarget.dataset)
+    const id = e.currentTarget.dataset.handlerId
     dispatch({
-      type: 'home/updateCurrentOptId',
-      currentOptId: e.currentTarget.dataset.handlerId,
-      drawerStatus: true
+      type: 'home/updateCurrentOpt',
+      currentOptId: id,
+      drawerStatus: true,
+      currentType: form.find((v) => v.id === id)?.useType
     })
   }
 

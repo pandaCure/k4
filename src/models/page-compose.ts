@@ -13,12 +13,14 @@ interface IFormItem {
   }
   ItemConfig: FormItemProps
   id: string
+  useType: 'input' | 'range-picker'
 }
 
 export interface IHomeStateType {
   form: IFormItem[]
   currentOptId: string
   drawerStatus: boolean
+  currentType?: 'input' | 'range-picker'
 }
 
 export interface IPageCompose {
@@ -30,7 +32,7 @@ export interface IPageCompose {
   }
   reducers: {
     updateFormItem: Reducer<IHomeStateType>
-    updateCurrentOptId: Reducer<IHomeStateType>
+    updateCurrentOpt: Reducer<IHomeStateType>
   }
   subscriptions: SubscriptionsMapObject
 }
@@ -51,6 +53,10 @@ const pageCompose: IPageCompose = {
       yield put({
         type: 'updateFormItem',
         form: [...form]
+      })
+      yield put({
+        type: 'updateCurrentOpt',
+        currentType: action.payload.props.type
       })
     },
     *handleEditEventEffect(action, { put, select }) {
@@ -77,10 +83,11 @@ const pageCompose: IPageCompose = {
     updateFormItem(state = { ...pageCompose.state }, { form }) {
       return { ...state, form }
     },
-    updateCurrentOptId(state = { ...pageCompose.state }, { currentOptId, drawerStatus }) {
+    updateCurrentOpt(state = { ...pageCompose.state }, { currentOptId, drawerStatus, currentType }) {
       return {
         ...state,
         currentOptId: currentOptId ?? state.currentOptId,
+        currentType: currentType ?? state.currentType,
         drawerStatus: drawerStatus ?? state.drawerStatus
       }
     }

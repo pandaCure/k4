@@ -2088,13 +2088,13 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/eslint-plugin@^4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2feslint-plugin/-/eslint-plugin-4.17.0.tgz#6f856eca4e6a52ce9cf127dfd349096ad936aa2d"
-  integrity sha1-b4Vuyk5qUs6c8Sff00kJatk2qi0=
+"@typescript-eslint/eslint-plugin@^4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2feslint-plugin/-/eslint-plugin-4.18.0.tgz#50fbce93211b5b690895d20ebec6fe8db48af1f6"
+  integrity sha1-UPvOkyEbW2kIldIOvsb+jbSK8fY=
   dependencies:
-    "@typescript-eslint/experimental-utils" "4.17.0"
-    "@typescript-eslint/scope-manager" "4.17.0"
+    "@typescript-eslint/experimental-utils" "4.18.0"
+    "@typescript-eslint/scope-manager" "4.18.0"
     debug "^4.1.1"
     functional-red-black-tree "^1.0.1"
     lodash "^4.17.15"
@@ -2102,15 +2102,15 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/experimental-utils@4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fexperimental-utils/-/experimental-utils-4.17.0.tgz#762c44aaa1a6a3c05b6d63a8648fb89b89f84c80"
-  integrity sha1-dixEqqGmo8BbbWOoZI+4m4n4TIA=
+"@typescript-eslint/experimental-utils@4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fexperimental-utils/-/experimental-utils-4.18.0.tgz#ed6c955b940334132b17100d2917449b99a91314"
+  integrity sha1-7WyVW5QDNBMrFxANKRdEm5mpExQ=
   dependencies:
     "@types/json-schema" "^7.0.3"
-    "@typescript-eslint/scope-manager" "4.17.0"
-    "@typescript-eslint/types" "4.17.0"
-    "@typescript-eslint/typescript-estree" "4.17.0"
+    "@typescript-eslint/scope-manager" "4.18.0"
+    "@typescript-eslint/types" "4.18.0"
+    "@typescript-eslint/typescript-estree" "4.18.0"
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
@@ -2137,14 +2137,14 @@
     eslint-scope "^5.0.0"
     eslint-utils "^2.0.0"
 
-"@typescript-eslint/parser@^4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fparser/-/parser-4.17.0.tgz#141b647ffc72ebebcbf9b0fe6087f65b706d3215"
-  integrity sha1-FBtkf/xy6+vL+bD+YIf2W3BtMhU=
+"@typescript-eslint/parser@^4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fparser/-/parser-4.18.0.tgz#a211edb14a69fc5177054bec04c95b185b4dde21"
+  integrity sha1-ohHtsUpp/FF3BUvsBMlbGFtN3iE=
   dependencies:
-    "@typescript-eslint/scope-manager" "4.17.0"
-    "@typescript-eslint/types" "4.17.0"
-    "@typescript-eslint/typescript-estree" "4.17.0"
+    "@typescript-eslint/scope-manager" "4.18.0"
+    "@typescript-eslint/types" "4.18.0"
+    "@typescript-eslint/typescript-estree" "4.18.0"
     debug "^4.1.1"
 
 "@typescript-eslint/scope-manager@4.15.2":
@@ -2155,13 +2155,13 @@
     "@typescript-eslint/types" "4.15.2"
     "@typescript-eslint/visitor-keys" "4.15.2"
 
-"@typescript-eslint/scope-manager@4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fscope-manager/-/scope-manager-4.17.0.tgz#f4edf94eff3b52a863180f7f89581bf963e3d37d"
-  integrity sha1-9O35Tv87UqhjGA9/iVgb+WPj030=
+"@typescript-eslint/scope-manager@4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fscope-manager/-/scope-manager-4.18.0.tgz#d75b55234c35d2ff6ac945758d6d9e53be84a427"
+  integrity sha1-11tVI0w10v9qyUV1jW2eU76EpCc=
   dependencies:
-    "@typescript-eslint/types" "4.17.0"
-    "@typescript-eslint/visitor-keys" "4.17.0"
+    "@typescript-eslint/types" "4.18.0"
+    "@typescript-eslint/visitor-keys" "4.18.0"
 
 "@typescript-eslint/types@3.10.1":
   version "3.10.1"
@@ -2173,10 +2173,10 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.15.2.tgz"
   integrity sha512-r7lW7HFkAarfUylJ2tKndyO9njwSyoy6cpfDKWPX6/ctZA+QyaYscAHXVAfJqtnY6aaTwDYrOhp+ginlbc7HfQ==
 
-"@typescript-eslint/types@4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2ftypes/-/types-4.17.0.tgz#f57d8fc7f31b348db946498a43050083d25f40ad"
-  integrity sha1-9X2Px/MbNI25RkmKQwUAg9JfQK0=
+"@typescript-eslint/types@4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2ftypes/-/types-4.18.0.tgz#bebe323f81f2a7e2e320fac9415e60856267584a"
+  integrity sha1-vr4yP4Hyp+LjIPrJQV5ghWJnWEo=
 
 "@typescript-eslint/typescript-estree@3.10.1":
   version "3.10.1"
@@ -2205,13 +2205,13 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/typescript-estree@4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2ftypescript-estree/-/typescript-estree-4.17.0.tgz#b835d152804f0972b80dbda92477f9070a72ded1"
-  integrity sha1-uDXRUoBPCXK4Db2pJHf5Bwpy3tE=
+"@typescript-eslint/typescript-estree@4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2ftypescript-estree/-/typescript-estree-4.18.0.tgz#756d3e61da8c16ab99185532c44872f4cd5538cb"
+  integrity sha1-dW0+YdqMFquZGFUyxEhy9M1VOMs=
   dependencies:
-    "@typescript-eslint/types" "4.17.0"
-    "@typescript-eslint/visitor-keys" "4.17.0"
+    "@typescript-eslint/types" "4.18.0"
+    "@typescript-eslint/visitor-keys" "4.18.0"
     debug "^4.1.1"
     globby "^11.0.1"
     is-glob "^4.0.1"
@@ -2233,12 +2233,12 @@
     "@typescript-eslint/types" "4.15.2"
     eslint-visitor-keys "^2.0.0"
 
-"@typescript-eslint/visitor-keys@4.17.0":
-  version "4.17.0"
-  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fvisitor-keys/-/visitor-keys-4.17.0.tgz#9c304cfd20287c14a31d573195a709111849b14d"
-  integrity sha1-nDBM/SAofBSjHVcxlacJERhJsU0=
+"@typescript-eslint/visitor-keys@4.18.0":
+  version "4.18.0"
+  resolved "https://npm.corp.kuaishou.com/@typescript-eslint%2fvisitor-keys/-/visitor-keys-4.18.0.tgz#4e6fe2a175ee33418318a029610845a81e2ff7b6"
+  integrity sha1-Tm/ioXXuM0GDGKApYQhFqB4v97Y=
   dependencies:
-    "@typescript-eslint/types" "4.17.0"
+    "@typescript-eslint/types" "4.18.0"
     eslint-visitor-keys "^2.0.0"
 
 "@webassemblyjs/ast@1.9.0":
@@ -2853,6 +2853,13 @@ axe-core@^4.0.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.2.tgz"
   integrity sha512-V+Nq70NxKhYt89ArVcaNL9FDryB3vQOd+BFXZIfO3RP6rwtj+2yqqqdHEkacutglPaZLkJeuXKCjCJDMGPtPqg==
+
+axios@^0.21.1:
+  version "0.21.1"
+  resolved "https://npm.corp.kuaishou.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
+  integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
+  dependencies:
+    follow-redirects "^1.10.0"
 
 axobject-query@^2.2.0:
   version "2.2.0"
@@ -5572,6 +5579,11 @@ follow-redirects@^1.0.0:
   version "1.13.2"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.2.tgz"
   integrity sha512-6mPTgLxYm3r6Bkkg0vNM0HTjfGrOEtsfbhagQvbxDEsEkpNhw582upBaoRZylzen6krEmxXJgt9Ju6HiI4O7BA==
+
+follow-redirects@^1.10.0:
+  version "1.13.3"
+  resolved "https://npm.corp.kuaishou.com/follow-redirects/-/follow-redirects-1.13.3.tgz#e5598ad50174c1bc4e872301e82ac2cd97f90267"
+  integrity sha1-5VmK1QF0wbxOhyMB6CrCzZf5Amc=
 
 for-in@^1.0.2:
   version "1.0.2"

@@ -1,0 +1,20 @@
+@import '~antd/dist/antd.css';
+@import '~noform-json/dist/index.css';
+@import '~nowrapper-json/dist/antd/index.css';
+
+.no-form-item-default-width {
+  width: 100% !important;
+
+  .no-form-item-content-elem {
+    width: 100% !important;
+  }
+}
+
+.ant-drawer-body {
+  h3 {
+    margin: 16px 0 14px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

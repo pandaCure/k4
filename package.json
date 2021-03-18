@@ -14,9 +14,10 @@
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
+    "@typescript-eslint/eslint-plugin": "^4.18.0",
+    "@typescript-eslint/parser": "^4.18.0",
     "antd": "^4.2.5-alpha.0",
+    "axios": "^0.21.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
@@ -92,12 +93,6 @@
     "test": "node scripts/test.js",
     "pages": "./node_modules/.bin/ts-node -O '{\\\"module\\\":\\\"commonjs\\\"}' bin/pages/pages.ts",
     "pages:build": "tsc bin/**/*.ts --module commonjs --target esnext --esModuleInterop --outdir bin/dist"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

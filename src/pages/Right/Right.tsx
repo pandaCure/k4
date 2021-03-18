@@ -5,22 +5,30 @@ import { Form, FormCore, FormItem } from 'noform-json'
 import { useDispatch, useSelector } from 'react-redux'
 import { reducerState } from '@models/reducer'
 import { FormItemProps } from 'noform-json/lib/component/FormItem'
+import { NextDatePicker } from 'nowrapper-json/lib/antd'
+import axios from 'axios'
 
 const { Group } = Radio
 
 export interface IRight {}
 
 type Props = IRight
+export const REQUIRE_VALIDATOR = {
+  required: true,
+  message: '必填'
+}
 const Right = (props: Readonly<Props>) => {
   const drawerStatus = useSelector((state: reducerState) => state.home.drawerStatus)
   const currentOptId = useSelector((state: reducerState) => state.home.currentOptId)
   const form = useSelector((state: reducerState) => state.home.form)
-  const handleDrawerStatus = () => {
+  const currentType = useSelector((state: reducerState) => state.home.currentType)
+  const dispatch = useDispatch()
+  const handleDrawerStatus = useCallback(() => {
     dispatch({
-      type: 'home/updateCurrentOptId',
+      type: 'home/updateCurrentOpt',
       drawerStatus: false
     })
-  }
+  }, [dispatch])
   const baseCore = useMemo(() => {
     return new FormCore({
       autoValidate: true
@@ -54,19 +62,21 @@ const Right = (props: Readonly<Props>) => {
       itemCore.setValues(formItem.ItemConfig)
     }
   }, [currentOptId, form, baseCore, configCore, itemCore])
-  const dispatch = useDispatch()
-  const handleErr = async (core: FormCore) => {
-    const err = await core.validate()
-    if (err) {
-      baseCore.scrollToError()
-      return false
-    }
-    return true
-  }
+  const handleErr = useCallback(
+    async (core: FormCore) => {
+      const err = await core.validate()
+      if (err) {
+        baseCore.scrollToError()
+        return false
+      }
+      return true
+    },
+    [baseCore]
+  )
   const handleEditEvent = useCallback(async () => {
     const err = await Promise.all([handleErr(baseCore), handleErr(itemCore), handleErr(configCore)])
-    if (!err.every((v) => v)) {
-      return handleDrawerStatus()
+    if (!err.every((v) => !!v)) {
+      return false
     }
     const { name, label } = baseCore.getValues()
     await dispatch({
@@ -75,10 +85,12 @@ const Right = (props: Readonly<Props>) => {
       label,
       id: currentOptId,
       CpConfig: configCore.getValues(),
-      ItemConfig: itemCore.getValues()
+      ItemConfig: itemCore.getValues(),
+      useType: currentType
     })
+    await axios.post('http://localhost:8888/create', form)
     handleDrawerStatus()
-  }, [currentOptId])
+  }, [baseCore, configCore, currentOptId, currentType, dispatch, form, handleDrawerStatus, handleErr, itemCore])
   const footer = useMemo(() => {
     return (
       <div
@@ -94,7 +106,7 @@ const Right = (props: Readonly<Props>) => {
         </Button>
       </div>
     )
-  }, [handleEditEvent])
+  }, [handleDrawerStatus, handleEditEvent])
 
   // TODO: 默认值类型
   /**
@@ -111,10 +123,18 @@ const Right = (props: Readonly<Props>) => {
         label: '表单项名称',
         Cp: Input,
         CpConfig: {
-          placeholder: '请输入表单项名称'
+          placeholder: '请输入表单项名称',
+          style: {
+            width: '100%'
+          }
         },
         ItemConfig: {
-          required: true
+          required: true,
+          validateConfig: [REQUIRE_VALIDATOR],
+          layout: {
+            label: 24,
+            control: 24
+          }
         }
       },
       {
@@ -122,10 +142,18 @@ const Right = (props: Readonly<Props>) => {
         label: '表单项值',
         Cp: Input,
         CpConfig: {
-          placeholder: '请输入表单项值'
+          placeholder: '请输入表单项值',
+          style: {
+            width: '100%'
+          }
         },
         ItemConfig: {
-          required: true
+          required: true,
+          validateConfig: [REQUIRE_VALIDATOR],
+          layout: {
+            label: 24,
+            control: 24
+          }
         }
       }
     ]
@@ -137,32 +165,54 @@ const Right = (props: Readonly<Props>) => {
         label: '是否必填',
         Cp: Group,
         ItemConfig: {
-          required: true
+          required: true,
+          validateConfig: [REQUIRE_VALIDATOR],
+          layout: {
+            label: 24,
+            control: 24
+          }
         },
         CpConfig: {
           options: [
             { label: '是', value: true },
             { label: '否', value: false }
-          ]
+          ],
+          style: {
+            width: '100%'
+          }
         }
       }
     ]
   }, [])
   const componentConfig = useMemo<any[]>(() => {
     return [
-      {
+      currentType === 'input' && {
         name: 'defaultValue',
         label: '默认值',
         Cp: Input,
         CpConfig: {
           placeholder: '请输入默认值'
         }
+      },
+      currentType === 'range-picker' && {
+        name: 'defaultValue',
+        label: '默认值',
+        Cp: NextDatePicker.RangePicker
       }
-    ]
-  }, [])
+    ].filter(Boolean)
+  }, [currentType])
+  console.log(componentConfig)
+  console.log(currentType)
   return (
     <div className={styles['right-page']}>
-      <Drawer visible={drawerStatus} footer={footer} title="编辑" onClose={handleDrawerStatus}>
+      <Drawer
+        visible={drawerStatus}
+        footer={footer}
+        title="编辑"
+        onClose={handleDrawerStatus}
+        mask={false}
+        style={{ width: '450px' }}
+      >
         <h3>基础信息设置</h3>
         <Form core={baseCore} direction="vertical-top">
           {formBase.map(({ name, label, Cp, CpConfig, ItemConfig }) => (
